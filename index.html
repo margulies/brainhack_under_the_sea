@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Large-scale trends in cortical organization">
+    <meta name="author" content="Daniel Margulies">
+    <title>Large-scale trends in cortical organization</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand"><a href="#top" onclick=$("#menu-close").click();>More information:</a></li>
+            <li><a href="#top" onclick=$("#menu-close").click();>Home</a></li>
+            <li><a href="#about" onclick=$("#menu-close").click();>About</a></li>
+            <li><a href="#organizers" onclick=$("#menu-close").click();>Organizers</a></li>
+            <li><a href="#schedule" onclick=$("#menu-close").click();>Schedule</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center-white">
+            <h2>Brainhack</h2>
+            <h3>Under the Sea</h3>
+            <h3>Coming soon to a Great Barrier Reef near you.</h3>
+            <br>
+            <a href="#about" class="btn btn-dark btn-lg">About</a>
+            <a href="#organizers" class="btn btn-dark btn-lg">Organizers</a>
+            <a href="#schedule" class="btn btn-dark btn-lg">Schedule</a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container">
+          <div class="row text-center">
+            <div class="col-xl-8 col-xl-offset-2 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+              <p>
+                As we mentioned, coming soon to a Great Barrier Reef near you. For more infomation, follow @LucinaUddin
+              </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr \>
+
+
+    <!-- Speakers -->
+    <section id="organizers" class="details">
+      <div class="container">
+           <div class="row">
+               <div class="col-lg-12 text-center">
+                   <h3>Organizers</h3>
+               </div>
+           </div>
+       </div>
+      <div class="container">
+          <div class="row">
+
+              <div class="col-lg-4 col-md-4 text-center">
+                  <div class="feature">
+                      <p>Lucina Uddin</p>
+                      <!-- <h5 class="text-muted">Affiliation</h5> -->
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 text-center">
+                  <div class="feature">
+                      <p>Sepideh Sadaghiani</p>
+                      <!-- <h5 class="text-muted">Affiliation</h5> -->
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 text-center">
+                  <div class="feature">
+                      <p>Casey Paquola</p>
+                      <!-- <h5 class="text-muted">Affiliation</h5> -->
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 text-center">
+                  <div class="feature">
+                      <p>Richard Bethlehem</p>
+                      <!-- <h5 class="text-muted">Affiliation</h5> -->
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 text-center">
+                  <div class="feature">
+                      <p>Daniel Margulies</p>
+                      <!-- <h5 class="text-muted">Affiliation</h5> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    <hr \>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    //#to-top button appears after scrolling
+    var fixed = false;
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 250) {
+            if (!fixed) {
+                fixed = true;
+                // $('#to-top').css({position:'fixed', display:'block'});
+                $('#to-top').show("slow", function() {
+                    $('#to-top').css({
+                        position: 'fixed',
+                        display: 'block'
+                    });
+                });
+            }
+        } else {
+            if (fixed) {
+                fixed = false;
+                $('#to-top').hide("slow", function() {
+                    $('#to-top').css({
+                        display: 'none'
+                    });
+                });
+            }
+        }
+    });
+    // Disable Google Maps scrolling
+    // See http://stackoverflow.com/a/25904582/1607849
+    // Disable scroll zooming and bind back the click event
+    var onMapMouseleaveHandler = function(event) {
+        var that = $(this);
+        that.on('click', onMapClickHandler);
+        that.off('mouseleave', onMapMouseleaveHandler);
+        that.find('iframe').css("pointer-events", "none");
+    }
+    var onMapClickHandler = function(event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+    $('.map').on('click', onMapClickHandler);
+    </script>
+
+</body>
+
+</html>
